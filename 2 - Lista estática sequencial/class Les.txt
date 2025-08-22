@@ -1,0 +1,41 @@
+class Les:
+    def __init__(self, tamanho):
+        self.tam = tamanho
+        self.vetor = [None] * self.tam
+        self.quant = 0
+    
+    def show(self):
+        for i in range(self.tam):
+            print(self.vetor[i], end="")
+        print()
+    
+    def inserir_fim(self, valor):
+        self.vetor[self.quant] = valor
+        self.quant += 1
+    
+    def remover_fim(self):
+        self.quant -= 1
+    
+    def esta_cheia(self,)
+        if self.quant == self.tam:
+            return True
+        return False
+    
+    def esta_vazia(self):
+        return self.quant == 0
+    
+    def inserir_inicio(self, valor):
+        if self.quant == self.tam:
+            print("A lista esta cheia.")
+        else:
+            for i in range(self.quant, 0, -1):
+                self.vetor[i] = self.vetor[i - 1]
+            self.vetor[0] = valor
+            self.quant += 1
+    
+    def remover_inicio(self):
+        if self.quant == self.vetor:
+            print("lista cheia")
+        else:
+            for i in range(self.quant):
+                self.vetor
