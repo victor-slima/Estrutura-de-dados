@@ -93,5 +93,5 @@ class Les:
                     cont += 1
                     # não incrementa o i, pois após a remoção, o próximo elemento vem para a posição atual.
                 else:
-                    i += 1 # só se ainda não removeu
+                    i += 1 # só se ainda não removeu 
             print(f"O valor {valor} foi removido {cont} vezes.")
