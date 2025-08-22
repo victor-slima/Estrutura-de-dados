@@ -4,7 +4,7 @@ import Les
 # o tamanho do vetor, que está em self.
 array = Les.Les(5)
 
-"""# Chamando o método show(), saída esperada: None None None None None
+# Chamando o método show(), saída esperada: None None None None None
 print("Chamando o método show(), saída esperada: None None None None None")
 array.show()
 print()
@@ -71,7 +71,7 @@ array.remover("B")
 array.remover("D")
 array.remover("E")
 array.show()
-print()"""
+print()
 
 # COLOCANDO AS INSTRUCOES ACIMA DENTRO DE COMENTARIO
 # Inserindo valores dentro do vetor, para teste do método remover_contar.
@@ -82,5 +82,21 @@ array.inserir_inicio("B")
 array.inserir_inicio("A")
 print("Inserindo valores dentro do vetor, para teste do método remover_contar.")
 print("Saída esperada: A B B E E")
+array.show()
+print()
+
+# Tentando usar o método remover_contar:
+array.remover_contar("E")
+print("Saida esperada: A B B.")
+array.show()
+print()
+
+array.remover_contar("E")
+print("Saída esperada: NADA.")
+array.show()
+print()
+
+array.remover_contar("B")
+print("Saida esperada: A.")
 array.show()
 print()

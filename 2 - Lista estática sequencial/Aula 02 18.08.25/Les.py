@@ -80,8 +80,18 @@ class Les:
     # Criando o metodo que ira retornar a quantidade de valores removidos:
     def remover_contar(self, valor):
         cont = 0
+        i = 0
         if self.quant == 0:
             print("Array vazio.")
         else:
-            for i in range(self.quant):
-                ...
+            while i < self.quant:
+                if valor == self.vetor[i]:
+                    # Desloca os elementos pra esquerda:
+                    for j in range(i, self.quant - 1):
+                        self.vetor[j] = self.vetor[j + 1]
+                    self.quant -= 1
+                    cont += 1
+                    # não incrementa o i, pois após a remoção, o próximo elemento vem para a posição atual.
+                else:
+                    i += 1 # só se ainda não removeu
+            print(f"O valor {valor} foi removido {cont} vezes.")
