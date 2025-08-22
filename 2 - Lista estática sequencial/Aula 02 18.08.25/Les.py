@@ -14,6 +14,8 @@ class Les:
         # O "i" irá iterar pela quantidade de elementos inseridos no vetor, e não pelo tamanho.
         for i in range(self.quant):
             print(self.vetor[i], end="|")
+        if self.quant == 0:
+            print("Array vazio.")
         print()
     
     # Criando o método que irá inserir um valor no final do vetor:
@@ -67,12 +69,19 @@ class Les:
         else:
             for i in range(self.quant):
                 if valor == self.vetor[i]:
-                    for j in range(1, self.quant - 1):
-                        self.vetor[i] = self.vetor[i + 1]
-                        return "Valor removido", True
-                else:
-                    return "Valor não encontrado", False
+                    # desloca todos os elementos a esquerda
+                    for j in range(i, self.quant - 1):
+                        self.vetor[j] = self.vetor[j + 1]
+                    self.quant -= 1
+                    return True  # encontrou
+        return False # nao encontrou
+                        
     
     # Criando o metodo que ira retornar a quantidade de valores removidos:
     def remover_contar(self, valor):
-        pass
+        cont = 0
+        if self.quant == 0:
+            print("Array vazio.")
+        else:
+            for i in range(self.quant):
+                ...

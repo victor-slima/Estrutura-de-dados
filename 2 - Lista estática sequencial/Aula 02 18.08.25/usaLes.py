@@ -4,7 +4,7 @@ import Les
 # o tamanho do vetor, que está em self.
 array = Les.Les(5)
 
-# Chamando o método show(), saída esperada: None None None None None
+"""# Chamando o método show(), saída esperada: None None None None None
 print("Chamando o método show(), saída esperada: None None None None None")
 array.show()
 print()
@@ -63,4 +63,14 @@ print("Utilizando agora o método que removerTF.\n" \
 "Saída esperada: True\n")
 
 array.removerTF("A")
-array.show
+array.show()
+print()
+
+# Removendo todos os valores:
+array.remover("B")
+array.remover("D")
+array.remover("E")
+array.show()
+print()"""
+
+# COLOCANDO AS INSTRUCOES ACIMA DENTRO DE COMENTARIO
