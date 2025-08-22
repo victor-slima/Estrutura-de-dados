@@ -74,3 +74,13 @@ array.show()
 print()"""
 
 # COLOCANDO AS INSTRUCOES ACIMA DENTRO DE COMENTARIO
+# Inserindo valores dentro do vetor, para teste do método remover_contar.
+array.inserir_inicio("E")
+array.inserir_inicio("E")
+array.inserir_inicio("B")
+array.inserir_inicio("B")
+array.inserir_inicio("A")
+print("Inserindo valores dentro do vetor, para teste do método remover_contar.")
+print("Saída esperada: A B B E E")
+array.show()
+print()
