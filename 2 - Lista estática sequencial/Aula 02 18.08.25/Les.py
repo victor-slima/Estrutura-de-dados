@@ -24,7 +24,7 @@ class Les:
     
     # Criando o método que irá remover um valor no final do vetor:
     def remover_fim(self):
-        self.quant -= 1
+        self.quant -= 1 
     
     # Criando o método que irá adicionar um valor no início do vetor:
     def inserir_inicio(self, valor):
