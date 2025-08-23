@@ -1,4 +1,3 @@
-
 # Criando a classe Les, para criarmos seus atributos e criarmos metodos para manipulá-la.
 
 class Les:
