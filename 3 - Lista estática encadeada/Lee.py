@@ -37,5 +37,13 @@ class Lee:
     def show(self):
         aux = self.prim
         while aux != -1:
-            print(self.vetor[aux].info)
+            print(self.vetor[aux].info, end="")
             aux = self.vetor[aux].prox
+    
+    def show_vetor(self):
+        print('Prim = ', self.prim)
+        print('Ult = ', self.ult)
+        print('Primeira posicao vazia = ', self.prox_pos_vazia)
+        print('Vetor = ')
+        for i in range(self.tam_maximo):
+            print(i, self.vetor[i].info, self.vetor[i].prox)

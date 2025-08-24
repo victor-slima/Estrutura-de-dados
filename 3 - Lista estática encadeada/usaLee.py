@@ -1,7 +1,20 @@
 import Lee
 
-vetor = Lee.Lee(10)
+lista = Lee.Lee(5)
 
-vetor.inicializa_estrutura()
+print('Lista:')
+lista.show()
+print()
+lista.show_vetor()
+print()
 
-vetor.show()
+lista.inserir_inicio('C')
+print('Lista após inserir inicio C: (esperado - C)')
+lista.show()
+lista.show_vetor()
+
+lista.inserir_inicio('D')
+print('Lista após inserir inicio D: (esperado - DC)')
+lista.show()
+print()
+lista.show_vetor()
