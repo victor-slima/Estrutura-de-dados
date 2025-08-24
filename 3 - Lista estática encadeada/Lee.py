@@ -13,3 +13,10 @@ class Lee:
 
         self.prim = -1
         self.ult = -1
+    
+    def inicializa_estrutura(self):
+        for i in range(self.tam_maximo - 1):
+            self.vetor[i] = No(None, i+1)
+        self.vetor[self.tam_maximo - 1] = No(None, i + 1)
+        return 0
+    
