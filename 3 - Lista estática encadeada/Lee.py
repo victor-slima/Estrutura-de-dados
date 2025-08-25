@@ -20,6 +20,12 @@ class Lee:
         self.vetor[self.tam_maximo - 1] = No(None, i + 1)
         return 0
     
+    def ocupa_no(self, valor, proximo):
+        posicao_livre = self.prox_pos_vazia
+        self.prox_pos_vazia = self.vetor[self.prox_pos_vazia].prox
+        self.vetor[posicao_livre] = No(valor, proximo)
+        return posicao_livre
+    
     def inserir_inicio(self, valor):
         if self.quant == 0:
             self.prim = self.ult = self.ocupa_no(valor, - 1)
@@ -27,12 +33,6 @@ class Lee:
         else:
             self.prim = self.ocupa_no(valor, self.prim)
             self.quant += 1
-    
-    def ocupa_no(self, valor, proximo):
-        posicao_livre = self.prox_pos_vazia
-        self.prox_pos_vazia = self.vetor[self.prox_pos_vazia].prox
-        self.vetor[posicao_livre] = No(valor, proximo)
-        return posicao_livre
     
     def show(self):
         aux = self.prim
