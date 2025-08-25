@@ -109,4 +109,125 @@ class Lee:
             return self.vetor[self.ult].info
         return None 
     
-    
+    def remover_irmaos(self, valor):
+        if self.quant != 1 and self.quant != 0:
+            anterior_do_anterior = -1
+            anterior = -1
+            atual = self.prim
+            while atual != -1 and self.vetor[atual].info != valor:
+                anterior_do_anterior = anterior
+                anterior = atual
+                atual = self.vetor[atual].prox
+            if atual != -1 and self.vetor[atual].info == valor:
+                if self.vetor[self.prim].prox == atual:
+                    self.remover_inicio()
+                else:
+                    if atual != self.prim:
+                        self.vetor[anterior_do_anterior].prox = atual
+                        self.devolve_no(anterior)
+                        self.quant -= 1
+                if self.vetor[atual].prox == self.ult:
+                    self.remover_fim()
+                else:
+                    if atual != self.ult:
+                        proximo = self.vetor[atual].prox
+                        self.vetor[atual].prox = self.vetor[proximo].prox
+                        self.devolve_no(proximo)
+                        self.quant -= 1
+    def remover_elemento(self, valor):
+        if self.esta_vazia():
+            print("Lista vazia!")
+            return False
+
+        ant = -1
+        atual = self.prim
+
+        # procurar o nó com o valor
+        while atual != -1 and self.vetor[atual].info != valor:
+            ant = atual
+            atual = self.vetor[atual].prox
+
+        if atual == -1:
+            return False  # não encontrou
+
+        # remover do início
+        if ant == -1:
+            self.prim = self.vetor[atual].prox
+            if self.prim == -1:  # se ficou vazio
+                self.ult = -1
+        else:
+            self.vetor[ant].prox = self.vetor[atual].prox
+            if atual == self.ult:  # se removeu o último
+                self.ult = ant
+
+        # devolve o nó
+        self.devolve_no(atual)
+        self.quant -= 1
+        return True
+
+    def buscar(self, valor):
+        atual = self.prim
+        pos = 0
+        while atual != -1:
+            if self.vetor[atual].info == valor:
+                return pos
+            atual = self.vetor[atual].prox
+            pos += 1
+        return None
+
+    def inserir_apos(self, valor1, valor2):
+        if self.esta_cheia():
+            print("Lista cheia!")
+            return False
+
+        # procurar valor2
+        atual = self.prim
+        while atual != -1 and self.vetor[atual].info != valor2:
+            atual = self.vetor[atual].prox
+
+        if atual == -1:
+            return False  # não encontrou valor2
+
+        # pega nó livre
+        novo = self.prox_pos_vazia
+        self.prox_pos_vazia = self.vetor[novo].prox
+
+        self.vetor[novo].info = valor1
+        self.vetor[novo].prox = self.vetor[atual].prox
+        self.vetor[atual].prox = novo
+
+        if atual == self.ult:  # se inseriu no fim
+            self.ult = novo
+
+        self.quant += 1
+        return True
+
+    def inserir_antes(self, valor1, valor2):
+        if self.esta_cheia():
+            print("Lista cheia!")
+            return False
+
+        # caso especial: valor2 é o primeiro
+        if self.prim != -1 and self.vetor[self.prim].info == valor2:
+            self.inserir_inicio(valor1)
+            return True
+
+        ant = -1
+        atual = self.prim
+        while atual != -1 and self.vetor[atual].info != valor2:
+            ant = atual
+            atual = self.vetor[atual].prox
+
+        if atual == -1:
+            return False  # valor2 não encontrado
+
+        # pega nó livre
+        novo = self.prox_pos_vazia
+        self.prox_pos_vazia = self.vetor[novo].prox
+
+        self.vetor[novo].info = valor1
+        self.vetor[novo].prox = atual
+        self.vetor[ant].prox = novo
+
+        self.quant += 1
+        return True
