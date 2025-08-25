@@ -34,6 +34,14 @@ class Lee:
             self.prim = self.ocupa_no(valor, self.prim)
             self.quant += 1
     
+    def inserir_fim(self, valor):
+        if self.quant == 0:
+            self.prim = self.ult = self.ocupa_no(valor, -1)
+            self.quant += 1
+        else:
+            self.vetor[self.ult].prox = self.ult = self.ocupa_no(valor, -1)
+            self.quant += 1
+
     def show(self):
         aux = self.prim
         while aux != -1:
@@ -47,3 +55,5 @@ class Lee:
         print('Vetor = ')
         for i in range(self.tam_maximo):
             print(i, self.vetor[i].info, self.vetor[i].prox)
+    
+    
