@@ -34,6 +34,17 @@ class Lee:
             self.prim = self.ocupa_no(valor, self.prim)
             self.quant += 1
     
+    # Implementando o remover_inicio:
+    def remover_inicio(self):
+        if self.quant == 1:
+            self.devolve_no(self.prim)
+            self.prim = self.ult
+        else:
+            novo_prim = self.vetor[self.prim].prox
+            self.devolve_no(self.prim)
+            self.prim = novo_prim
+        self.quant -= 1
+    
     def inserir_fim(self, valor):
         if self.quant == 0:
             self.prim = self.ult = self.ocupa_no(valor, -1)
@@ -55,5 +66,47 @@ class Lee:
         print('Vetor = ')
         for i in range(self.tam_maximo):
             print(i, self.vetor[i].info, self.vetor[i].prox)
+    
+    # Implementando o método devolve_no:
+    def devolve_no(self, no):
+        self.vetor[no].prox = self.prox_pos_vazia
+        self.prox_pos_vazia = no
+    
+    
+    def remover_fim(self):
+        if self.quant == 1: 
+            self.devolve_no(self.prim)
+            self.prim = self.ult = -1
+        else: 
+            aux = self.prim
+            while self.vetor[aux].prox != self.ult:
+                aux = self.vetor[aux].prox
+            self.devolve_no(self.ult)  
+            self.vetor[aux].prox = -1
+            self.ult = aux
+        self.quant -= 1
+       
+    def tamanho_atual(self):
+        return self.quant  
+    
+    def capacidade(self):
+        return self.tam_maximo  
+     
+    def esta_vazia(self):
+        return self.quant == 0
+    
+    def esta_cheia(self):
+        return self.quant == self.tam_maximo
+
+ 
+    def ver_primeiro(self):
+        if self.prim != -1:
+            return self.vetor[self.prim].info
+        return None  
+
+    def ver_ultimo(self):
+        if self.ult != -1:
+            return self.vetor[self.ult].info
+        return None 
     
     
