@@ -6,3 +6,7 @@ l.inserir_inicio("A")
 l.inserir_inicio("B")
 l.inserir_inicio("C")
 l.show()
+print()
+
+l.remover_inicio()
+l.show()

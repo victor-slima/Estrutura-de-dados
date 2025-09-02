@@ -23,3 +23,11 @@ class Ldse:
         else:
             self.prim = No(valor, self.prim)
         self.quant += 1
+    
+    # Criando o remover inicio:
+    def remover_inicio(self):
+        if self.quant == 1:
+            self.prim = self.ult = None
+        else:
+            self.prim = self.prim.prox
+        self.quant -= 1
