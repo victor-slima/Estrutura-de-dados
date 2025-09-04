@@ -15,6 +15,17 @@ class Ldse:
             print(aux.info, end=" ")
             aux = aux.prox
 
+    # Criando o ver primeiro:
+    def ver_primeiro(self):
+        if self.prim == None:
+            return None
+        return self.prim.info
+    
+    def ver_ultimo(self):
+        if self.ult == None:
+            return None
+        return self.ult.info
+
 
     # Criando o método inserir_inicio:
     def inserir_inicio(self, valor):

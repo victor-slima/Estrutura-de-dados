@@ -16,3 +16,16 @@ l.inserir_fim("E")
 print("INSERINDO FIM, I D E, SAÍDA ESPERADA: C A B I D E.")
 l.show()
 print()
+
+l.remover_inicio()
+print("REMOVENDO O PRIMEIRO NÓ DA LISTA")
+l.show()
+print()
+
+print("VENDO O PRIMEIRO DA LISTA:")
+print(l.ver_primeiro())
+print()
+
+print("VENDO O ÚLTIMO DA LISTA:")
+print(l.ver_ultimo())
+print()
