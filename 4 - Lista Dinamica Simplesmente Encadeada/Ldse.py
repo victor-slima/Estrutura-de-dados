@@ -24,6 +24,14 @@ class Ldse:
             self.prim = No(valor, self.prim)
         self.quant += 1
     
+    # Criando o método inserir fim:
+    def inserir_fim(self, valor):
+        if self.quant == 0:
+            self.prim = self.ult = No(valor, None)
+        else:
+            self.ult.prox = self.ult = No(valor, None)
+        self.quant += 1
+
     # Criando o remover inicio:
     def remover_inicio(self):
         if self.quant == 1:
