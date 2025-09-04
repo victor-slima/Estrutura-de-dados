@@ -29,3 +29,20 @@ print()
 print("VENDO O ÚLTIMO DA LISTA:")
 print(l.ver_ultimo())
 print()
+
+l.remover_fim()
+print()
+print("atual ultimo da lista")
+print(l.ver_ultimo())
+
+print("printando a lista atual: saída esperada => A B I D")
+l.show()
+print()
+
+l.inserir_fim("J")
+l.show()
+print()
+
+print("removendo o único valor da lista: ")
+l.remover("I")
+l.show()

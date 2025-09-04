@@ -11,9 +11,12 @@ class Ldse:
     # Criando o metodo show()
     def show(self):
         aux = self.prim
-        while aux != None:
-            print(aux.info, end=" ")
-            aux = aux.prox
+        if self.quant == 0:
+            print("Lista sem nenhum nó.")
+        else:    
+            while aux != None:
+                print(aux.info, end=" ")
+                aux = aux.prox
 
     # Criando o ver primeiro:
     def ver_primeiro(self):
@@ -49,4 +52,32 @@ class Ldse:
             self.prim = self.ult = None
         else:
             self.prim = self.prim.prox
+        self.quant -= 1
+    
+    # Criando o remover fim:
+    def remover_fim(self):
+        if self.quant == 1:
+            self.prim = self.ult = None
+        else:
+            aux = self.prim
+            while aux.prox != self.ult:
+                aux = aux.prox
+            self.ult = aux
+            self.ult.prox = None
+        self.quant -= 1
+
+    def remover(self, valor):
+        if self.quant == 1:
+            self.prim = self.ult = None
+        else:
+            aux = self.prim
+            ant = None
+            while aux.info != valor:
+                ant = aux
+                aux = aux.prox
+            ant.prox = aux.prox
+
+            print(ant.info)
+            print(aux.info)
+        
         self.quant -= 1
