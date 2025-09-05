@@ -82,3 +82,42 @@ class Ldse:
             else:
                 ant.prox = aux.prox
             self.quant -= 1
+    
+
+    def removerTF(self, valor):
+       
+        # verificar se a lista está vazia;
+        if self.quant == 0:
+            return "Lista vazia", False
+        
+        # fazer o tratamento de somente 1 elemento na lista;
+        if self.quant == 1:
+            if self.prim.info == valor:
+                self.prim = self.ult = None
+                self.quant = 0
+                return f"valor {valor} removido.", True
+            else:
+                return "Valor não encontrado"
+        
+        # fazendo os casos em que há mais de dois nós na lista:
+        aux = self.prim
+        ant = None
+        while aux.info != valor:
+            ant = aux.prox
+            aux = aux.prox
+        
+        if aux == None:  # percorreu tudo e não achou
+            return f"Valor {valor} não encontrado.", False
+    
+        # se remover o primeiro nó
+        if aux == self.prim:
+            self.prim = aux.prox
+        else:
+            ant.prox = aux.prox
+        
+        # se remover o último nó
+        if aux == self.ult:
+            self.ult = ant
+
+        self.quant -= 1    
+        return f"Nó com o valor {valor} removido", True

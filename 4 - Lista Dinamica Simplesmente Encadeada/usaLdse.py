@@ -65,3 +65,7 @@ l.inserir_fim("E")
 l.inserir_fim("F")
 l.show()
 print()
+
+print("Removendo o valor 'A', saída esperada: True ")
+l.removerTF("A")
+l.show()
