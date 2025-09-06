@@ -110,10 +110,6 @@ class Ldse:
             return f"Valor {valor} não encontrado.", False
     
         # se remover o primeiro nó
-        if aux == self.prim:
-            self.prim = aux.prox
-        else:
-            ant.prox = aux.prox
         
         # se remover o último nó
         if aux == self.ult:
@@ -121,3 +117,7 @@ class Ldse:
 
         self.quant -= 1    
         return f"Nó com o valor {valor} removido", True
+    
+    # Criando o metodo removerCout:
+    def removerCount(self, valor):
+        pass

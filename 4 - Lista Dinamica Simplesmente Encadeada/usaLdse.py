@@ -1,7 +1,7 @@
 import Ldse
 
 l = Ldse.Ldse()
-
+"""
 l.inserir_inicio("B")
 l.inserir_inicio("A")
 l.inserir_inicio("C")
@@ -55,17 +55,21 @@ l.remover("D")
 l.remover("J")
 l.show()
 print()
-
+"""
 print("Inserindo valores na lista, saída esperada: A B C D E F")
 l.inserir_fim("A")
 l.inserir_fim("B")
-l.inserir_fim("C")
+l.inserir_fim("A")
 l.inserir_fim("D")
-l.inserir_fim("E")
+l.inserir_fim("A")
 l.inserir_fim("F")
 l.show()
 print()
-
+"""
 print("Removendo o valor 'A', saída esperada: True ")
 l.removerTF("A")
+l.show()
+"""
+print("Testando o remover contar, saida esperada: a foi removido 3 vezes.")
+l.removerCount("A")
 l.show()
