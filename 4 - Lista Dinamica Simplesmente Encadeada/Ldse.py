@@ -120,4 +120,23 @@ class Ldse:
     
     # Criando o metodo removerCout:
     def removerCount(self, valor):
-        pass
+        cont = 0
+        aux = self.prim
+        ant = None
+
+        # se o valor achado for o primeiro da lista...
+        if aux.info == valor and ant == None:
+            
+            # entao ele sera o primeiro e o ultimo valor ao mesmo tempo, aí tornamos ele None
+            self.prim = self.ult = None
+            # incrementando o cont
+            cont += 1
+            # decrementando a quantidade
+            self.quant -= 1
+            return f"O valor {valor} era o único valor na lista,e foi removido."
+        else:
+            # enquanto o valor do nó for diferente do valor inserido, a lista sera percorrida:
+            while aux.info != valor:
+                ant = aux.prox
+                aux = aux.prox
+            
