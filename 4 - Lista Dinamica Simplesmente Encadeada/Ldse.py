@@ -138,5 +138,5 @@ class Ldse:
             # enquanto o valor do nó for diferente do valor inserido, a lista sera percorrida:
             while aux.info != valor:
                 ant = aux.prox
-                aux = aux.prox
+                aux = aux.proxsss
             
