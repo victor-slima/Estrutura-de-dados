@@ -70,6 +70,6 @@ print("Removendo o valor 'A', saída esperada: True ")
 l.removerTF("A")
 l.show()
 """
-print("Testando o remover contar, saida esperada: a foi removido 3 vezes.")
+print("Testando o remover contar, saida esperada: B D F.")
 l.removerCount("A")
 l.show()

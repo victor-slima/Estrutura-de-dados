@@ -124,12 +124,17 @@ class Ldse:
         aux = self.prim
         ant = None
         while aux != None:
-            if self.quant == 1:
-                if self.prim.info == valor:
-                    self.prim = self.ult = None
-                    self.quant = 0
+            if aux.info == valor:
+                if ant == None:
+                    self.prim = aux.prox
                     cont += 1
+                    self.quant -= 1
                 else:
-                    print("Valor não encontrado!")
-            else:
+                    ant.prox = aux.prox
+                if aux == self.ult:
+                    self.ult = ant
                 
+                aux = aux.prox
+            else:
+                ant = aux
+                aux = aux.prox
