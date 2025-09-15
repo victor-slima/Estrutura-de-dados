@@ -96,3 +96,5 @@ l.show()
 
 l.remover("B")
 l.show()
+
+l.show_reverso()

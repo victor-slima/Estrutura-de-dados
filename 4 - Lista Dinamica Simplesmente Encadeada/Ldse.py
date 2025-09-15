@@ -18,6 +18,7 @@ class Ldse:
                 print(aux.info, end=" ")
                 aux = aux.prox
             print("\n")
+    
 
     # Criando o ver primeiro:
     def ver_primeiro(self):
@@ -111,9 +112,6 @@ class Ldse:
                 self.quant -= 1
         
 
-
-
-    
 
     def removerTF(self, valor):
        
