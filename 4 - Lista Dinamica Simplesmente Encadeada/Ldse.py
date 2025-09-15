@@ -68,20 +68,45 @@ class Ldse:
 
     
     def remover(self, valor):
-        if self.quant == 1:
+        # verificando se tem 1 só, e se o valor é o que eu escolhi.
+        if self.quant == 1 and self.prim.info == valor:
             self.prim = self.ult = None
             self.quant = 0
         else:
-            aux = self.prim
+            """aux = self.prim
             ant = None
             while aux.info != valor:
                 ant = aux
                 aux = aux.prox
             if aux.info == valor and ant == None:
-                self.prim = aux.prox    
+                self.prim = aux.prox
+                
             else:
                 ant.prox = aux.prox
-            self.quant -= 1
+                self.ult = ant
+            self.quant -= 1"""
+            # do fabiano:
+
+            aux = self.prim
+            ant = None
+            while aux != None and self.prim.info != valor:
+                ant = aux
+                aux = aux.prox
+            # se aux for diferente de None, achei o valor:
+            if aux != None:
+                # verificando se o valor é o primeiro;
+                if aux == self.prim:
+                    self.prim = self.prim.prox
+                else:
+                    ant.prox = aux.prox
+                    # se o valor for o ultimo:
+                    if aux == self.ult:
+                        self.ult = ant
+                self.quant -= 1
+
+
+
+
     
 
     def removerTF(self, valor):
