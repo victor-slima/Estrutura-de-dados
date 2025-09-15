@@ -123,20 +123,13 @@ class Ldse:
         cont = 0
         aux = self.prim
         ant = None
-
-        # se o valor achado for o primeiro da lista...
-        if aux.info == valor and ant == None:
-            
-            # entao ele sera o primeiro e o ultimo valor ao mesmo tempo, aí tornamos ele None
-            self.prim = self.ult = None
-            # incrementando o cont
-            cont += 1
-            # decrementando a quantidade
-            self.quant -= 1
-            return f"O valor {valor} era o único valor na lista,e foi removido."
-        else:
-            # enquanto o valor do nó for diferente do valor inserido, a lista sera percorrida:
-            while aux.info != valor:
-                ant = aux.prox
-                aux = aux.proxsss
-            
+        while aux != None:
+            if self.quant == 1:
+                if self.prim.info == valor:
+                    self.prim = self.ult = None
+                    self.quant = 0
+                    cont += 1
+                else:
+                    print("Valor não encontrado!")
+            else:
+                
