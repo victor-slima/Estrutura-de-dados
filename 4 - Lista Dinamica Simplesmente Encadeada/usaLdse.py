@@ -72,4 +72,6 @@ l.show()
 """
 print("Testando o remover contar, saida esperada: B D F.")
 l.removerCount("A")
+l.ver_primeiro()
+l.ver_ultimo()
 l.show()

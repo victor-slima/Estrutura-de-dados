@@ -125,16 +125,23 @@ class Ldse:
         ant = None
         while aux != None:
             if aux.info == valor:
+                # se o valor for o primeiro nó:
                 if ant == None:
                     self.prim = aux.prox
                     cont += 1
                     self.quant -= 1
+                # se o valor for o último nó:    
+                elif aux == self.ult:
+                    self.ult = ant
+                    cont += 1
+                    self.quant -= 1
+
+                # se o valor estiver no meio da lista:    
                 else:
                     ant.prox = aux.prox
-                if aux == self.ult:
-                    self.ult = ant
                 
                 aux = aux.prox
+
             else:
                 ant = aux
                 aux = aux.prox
