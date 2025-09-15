@@ -17,6 +17,7 @@ class Ldse:
             while aux != None:
                 print(aux.info, end=" ")
                 aux = aux.prox
+            print("\n")
 
     # Criando o ver primeiro:
     def ver_primeiro(self):
@@ -69,11 +70,12 @@ class Ldse:
     
     def remover(self, valor):
         # verificando se tem 1 só, e se o valor é o que eu escolhi.
+        """
         if self.quant == 1 and self.prim.info == valor:
             self.prim = self.ult = None
             self.quant = 0
         else:
-            """aux = self.prim
+            aux = self.prim
             ant = None
             while aux.info != valor:
                 ant = aux
@@ -84,26 +86,30 @@ class Ldse:
             else:
                 ant.prox = aux.prox
                 self.ult = ant
-            self.quant -= 1"""
+            self.quant -= 1
+        """
             # do fabiano:
-
+        if self.quant == 1 and self.prim.info == valor:
+            self.prim = self.ult = None
+            self.quant -= 1
+        else:
             aux = self.prim
             ant = None
-            while aux != None and self.prim.info != valor:
+            while aux != None and aux.info != valor:
                 ant = aux
                 aux = aux.prox
-            # se aux for diferente de None, achei o valor:
+            
             if aux != None:
-                # verificando se o valor é o primeiro;
+                
                 if aux == self.prim:
                     self.prim = self.prim.prox
                 else:
                     ant.prox = aux.prox
-                    # se o valor for o ultimo:
+                  
                     if aux == self.ult:
                         self.ult = ant
                 self.quant -= 1
-
+        
 
 
 

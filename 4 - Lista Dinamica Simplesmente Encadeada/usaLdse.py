@@ -56,6 +56,7 @@ l.remover("J")
 l.show()
 print()
 """
+"""
 print("Inserindo valores na lista, saída esperada: A B C D E F")
 l.inserir_fim("A")
 l.inserir_fim("B")
@@ -65,13 +66,33 @@ l.inserir_fim("A")
 l.inserir_fim("F")
 l.show()
 print()
-"""
+
 print("Removendo o valor 'A', saída esperada: True ")
 l.removerTF("A")
 l.show()
-"""
+
 print("Testando o remover contar, saida esperada: B D F.")
 l.removerCount("A")
 l.ver_primeiro()
 l.ver_ultimo()
+l.show()
+"""
+l.inserir_fim("C")
+l.inserir_inicio("B")
+l.inserir_inicio("A")
+l.show()
+
+l.remover("C")
+l.show()
+
+l.inserir_fim("D")
+l.show()
+
+l.remover("A")
+l.show()
+
+l.inserir_inicio("E")
+l.show()
+
+l.remover("B")
 l.show()
