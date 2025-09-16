@@ -38,4 +38,36 @@ class Ldde:
             self.ult.prox = self.ult = No(self.ult, valor, None)
         self.quant += 1
     
+    # inserindo o remover_inicio(self, valor):
+    def remover_inicio(self, valor):
+        if self.quant == 1:
+            self.prim = self.ult = None
+        else:
+            self.prim = self.prim.prox
+            self.prim.ant = None
+        self.quant -= 1
     
+    # inserindo o remover_fim(self, valor):
+    def remover_fim(self, valor):
+        if self.quant == 1:
+            self.prim = self.ult = None
+        else:
+            self.ult = self.ult.ant
+            self.ut.prox = None
+        self.quant -= 1
+    
+    # inserindo ver primeiro:
+    def ver_primeiro(self):
+        print(self.prim.info)
+    
+    # inserindo o ver ultimo:
+    def ver_ultimo(self):
+        print(self.ult.info)
+    
+    # inserindo o ver quantidade:
+    def ver_quantidade(self):
+        print(self.quant)
+    
+    # inserindo o esta_vazia:
+    def esta_vazia(self):
+        return self.quant == 0
