@@ -9,6 +9,20 @@ class Ldde:
         self.prim = self.ult = None
         self.quant = 0
     
+    def show(self):
+        aux = self.prim
+        while aux != None:
+            print(aux.info, end="")
+            aux = aux.prox
+        print("\n")
+    
+    def show_reverso(self):
+        aux = self.ult
+        while aux != None:
+            print(aux.info, end="")
+            aux = aux.ant
+        print("\n")
+
     def inserir_inicio(self, valor):
         if self.quant == 0:
             self.prim = self.ult = No(None, valor, None)
@@ -24,9 +38,4 @@ class Ldde:
             self.ult.prox = self.ult = No(self.ult, valor, None)
         self.quant += 1
     
-    def show(self):
-        aux = self.prim
-        while aux != None:
-            print(aux.info, end="")
-            aux = aux.prox
-        print("\n")
+    
