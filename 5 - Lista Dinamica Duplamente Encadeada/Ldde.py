@@ -71,3 +71,13 @@ class Ldde:
     # inserindo o esta_vazia:
     def esta_vazia(self):
         return self.quant == 0
+
+    # inserindo o método remover:
+    def remover(self, valor):
+        ant = None
+        aux = self.prim
+        pos = aux.prox
+        while aux != None:
+            ant = aux.ant
+            aux = aux.prox
+            pos = aux.prox
