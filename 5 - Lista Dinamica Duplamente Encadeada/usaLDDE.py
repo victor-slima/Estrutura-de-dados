@@ -44,3 +44,29 @@ l.ver_ultimo()
 print("\n")
 
 l.show()
+l.ver_quantidade()
+
+print("Inserindo valores novamente: espera-se A B C D E")
+l.remover("B")
+l.remover("D")
+l.inserir_fim("A")
+l.inserir_fim("B")
+l.inserir_fim("C")
+l.inserir_fim("D")
+l.inserir_fim("E")
+l.show()
+l.ver_quantidade()
+
+"""
+print("removendo TF: valor 'C'")
+l.removerTF("C")
+l.show()
+l.ver_quantidade()
+print("\n")
+
+print("removendo TF: valor 'C'")
+l.removerTF("C")
+l.show()
+l.ver_quantidade()
+"""
+

@@ -88,4 +88,33 @@ class Ldde:
             self.ult.prox = None
         else:
             aux.ant.prox = aux.prox
+            aux.prox.ant = aux.ant
         self.quant -= 1
+
+    # Inserindo o removerTF: retorna True se removeu um valor, e false se não removeu.
+    def removerTF(self, valor):
+        aux = self.prim
+        if self.quant == 1 and aux.info == valor:
+            self.prim = self.ult = None
+            self.quant -= 1
+
+            return True
+       
+        while aux != None and aux.info != valor:
+            aux = aux.prox
+        if aux == None:
+            print("Valor não está na lista.")
+            return print(False)
+        if aux.ant == None:
+            aux = self.prim = aux.prox
+            self.prim.ant = None    
+        elif aux.prox == None:
+            aux = self.ult = aux.ant
+            self.ult.prox = None
+        else:
+            aux.ant.prox = aux.prox
+            aux.prox.ant = aux.ant
+    
+        self.quant -= 1
+        print(f"Valor '{valor}' removido. ")                
+        return print(True)
