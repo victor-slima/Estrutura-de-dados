@@ -118,3 +118,28 @@ class Ldde:
         self.quant -= 1
         print(f"Valor '{valor}' removido. ")                
         return print(True)
+    
+    # Inserindo o metodo remover_contar:
+    def remover_contar(self, valor):
+        cont = 0
+        aux = self.prim
+        if self.quant == 1 and aux.info == valor:
+            self.prim = self.ult = None
+            self.quant -= 1
+            cont += 1
+        else:
+            while aux != None:
+                if aux.info == valor:
+                    if aux.ant == None:
+                        aux = self.prim = aux.prox
+                        self.prim.ant = None
+                    elif aux.prox == None:
+                        aux = self.ult = aux.ant
+                        self.ult.prox = None
+                    else:
+                        aux.ant.prox = aux.prox
+                        aux.prox.ant = aux.ant
+                    cont += 1
+                    self.quant -= 1
+                aux = aux.prox
+            print(f"O valor {valor} foi removido {cont} vezes")        

@@ -12,7 +12,7 @@ l.ver_primeiro()
 l.ver_ultimo()
 l.ver_quantidade()
 l.esta_vazia()
-"""
+
 
 l.inserir_fim("A")
 l.inserir_fim("B")
@@ -57,7 +57,7 @@ l.inserir_fim("E")
 l.show()
 l.ver_quantidade()
 
-"""
+
 print("removendo TF: valor 'C'")
 l.removerTF("C")
 l.show()
@@ -70,3 +70,34 @@ l.show()
 l.ver_quantidade()
 """
 
+l.inserir_fim("A")
+l.inserir_fim("T")
+l.inserir_fim("R")
+l.inserir_fim("O")
+l.inserir_fim("P")
+l.inserir_fim("E")
+l.inserir_fim("E")
+l.inserir_fim("E")
+l.inserir_fim("E")
+l.inserir_fim("L")
+l.inserir_fim("A")
+l.inserir_fim("M")
+l.inserir_fim("E")
+l.inserir_fim("N")
+l.inserir_fim("T")
+l.inserir_fim("O")
+l.inserir_fim("O")
+l.inserir_fim("O")
+l.inserir_fim("O")
+l.show()
+
+print("Removendo os valores repetidos e mostrando a quantidade deles.")
+print("Removendo o 'E': espera-se O valor E foi removido 5 vezes.")
+l.remover_contar("E")
+l.show()
+l.ver_primeiro()
+
+print("Removendo o 'O': espera-se O valor E foi removido 5 vezes.")
+l.remover_contar("O")
+l.show()
+l.ver_ultimo()
