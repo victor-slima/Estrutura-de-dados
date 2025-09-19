@@ -74,10 +74,18 @@ class Ldde:
 
     # inserindo o método remover:
     def remover(self, valor):
-        ant = None
         aux = self.prim
-        pos = aux.prox
-        while aux != None:
-            ant = aux.ant
+        while aux != None and aux.info != valor:
             aux = aux.prox
-            pos = aux.prox
+        if aux == None:
+            print("Valor não encontrado.")
+        
+        if aux.ant == None: # é o primeiro elemento
+            aux = aux.prox
+            self.prim = aux
+        elif aux.prox == None:
+            aux = self.ult = aux.ant
+            self.ult.prox = None
+        else:
+            aux.ant.prox = aux.prox
+        self.quant -= 1
