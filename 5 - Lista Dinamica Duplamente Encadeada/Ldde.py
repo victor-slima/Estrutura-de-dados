@@ -103,7 +103,7 @@ class Ldde:
             aux = aux.prox
         if aux == None:
             print("Valor não está na lista.")
-            return print(False)
+            return False
         if aux.ant == None:
             aux = self.prim = aux.prox
             self.prim.ant = None    
@@ -116,7 +116,7 @@ class Ldde:
     
         self.quant -= 1
         print(f"Valor '{valor}' removido. ")                
-        return print(True)
+        return True
     
     # Inserindo o metodo remover_contar:
     def remover_contar(self, valor):
