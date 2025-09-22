@@ -15,7 +15,6 @@ class Ldde:
             print(aux.info, end="")
             aux = aux.prox
         print("\n")
-    
     def show_reverso(self):
         aux = self.ult
         while aux != None:
