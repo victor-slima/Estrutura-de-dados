@@ -18,9 +18,9 @@ class Ldde:
     def show_reverso(self):
         aux = self.ult
         while aux != None:
-            print(aux.info, end="")
+            print(aux.info, end=" ")
             aux = aux.ant
-        print("\n")
+        print("")
 
     def inserir_inicio(self, valor):
         if self.quant == 0:
@@ -37,8 +37,8 @@ class Ldde:
             self.ult.prox = self.ult = No(self.ult, valor, None)
         self.quant += 1
     
-    # inserindo o remover_inicio(self, valor):
-    def remover_inicio(self, valor):
+    # inserindo o remover_inicio(self):
+    def remover_inicio(self):
         if self.quant == 1:
             self.prim = self.ult = None
         else:
@@ -46,8 +46,8 @@ class Ldde:
             self.prim.ant = None
         self.quant -= 1
     
-    # inserindo o remover_fim(self, valor):
-    def remover_fim(self, valor):
+    # inserindo o remover_fim(self):
+    def remover_fim(self):
         if self.quant == 1:
             self.prim = self.ult = None
         else:
@@ -78,7 +78,7 @@ class Ldde:
             aux = aux.prox
         if aux == None:
             print("Valor não encontrado.")
-        
+            return 
         if aux.ant == None: # é o primeiro elemento
             aux = aux.prox
             self.prim = aux
@@ -102,7 +102,6 @@ class Ldde:
         while aux != None and aux.info != valor:
             aux = aux.prox
         if aux == None:
-            print("Valor não está na lista.")
             return False
         if aux.ant == None:
             aux = self.prim = aux.prox
@@ -119,26 +118,37 @@ class Ldde:
         return True
     
     # Inserindo o metodo remover_contar:
+    
     def remover_contar(self, valor):
         cont = 0
         aux = self.prim
-        if self.quant == 1 and aux.info == valor:
-            self.prim = self.ult = None
-            self.quant -= 1
-            cont += 1
-        else:
-            while aux != None:
-                if aux.info == valor:
-                    if aux.ant == None:
-                        aux = self.prim = aux.prox
-                        self.prim.ant = None
-                    elif aux.prox == None:
-                        aux = self.ult = aux.ant
-                        self.ult.prox = None
-                    else:
-                        aux.ant.prox = aux.prox
-                        aux.prox.ant = aux.ant
-                    cont += 1
-                    self.quant -= 1
-                aux = aux.prox
-            print(f"O valor {valor} foi removido {cont} vezes")        
+
+        while aux is not None:
+            proximo = aux.prox  # salva o próximo antes de remover aux
+
+            if aux.info == valor:
+                if aux == self.prim and aux == self.ult:
+                    # único elemento na lista
+                    self.prim = self.ult = None
+                
+                # Valor sendo o primeiro da lista:
+                elif aux == self.prim:
+                    self.prim = aux.prox
+                    self.prim.ant = None
+                
+                # Valor sendo o último da lista:
+                elif aux == self.ult:
+                    self.ult = aux.ant
+                    self.ult.prox = None
+                
+                # Valor estando no meio da lista:
+                else:
+                    aux.ant.prox = aux.prox
+                    aux.prox.ant = aux.ant
+
+                cont += 1
+                self.quant -= 1
+
+            aux = proximo  # vai para o próximo nó
+
+        print(f"O valor {valor} foi removido {cont} vezes")
