@@ -15,23 +15,13 @@ l.inserir_fim('J')
 l.inserir_fim('K')
 l.inserir_fim('L')
 l.show() # ABCDEFGHIJKL
-l.show_reverso() # LKJIHGFEDCBA
-print("")
-
-
-
-
-print("Vizinhos de 'B' : remove 'A' e 'C'")
-l.remover_vizinhos('B')
-l.show() # BDEFGHIJKL
-l.show_reverso() # LKJIHGFEDB
+# l.show_reverso() # LKJIHGFEDCBA
 print("")
 
 
 
 
 
-"""
 print("Vizinhos de 'F' (meio): remove 'E' e 'G'")
 l.remover_vizinhos('F')
 l.show() # ABCDFHIJKL
@@ -87,4 +77,3 @@ print("Valor inexistente 'X' (não altera)")
 l.remover_vizinhos('X')
 l.show() # ACFHJL
 l.show_reverso() # LJHFCA
-"""

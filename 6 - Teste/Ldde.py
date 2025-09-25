@@ -28,29 +28,36 @@ class Ldde:
         - Se 'valor' estiver no fim, remove apenas o anterior.
         - Se 'valor' não for encontrado, não faz nada.
         """
-        cont = 0
-        
 
-        # Se tiver 1 elemento ou nenhum, nao faz nada:
-        if self.quant == 1 and self.quant == 0:
-            print("Não é possível realizar essa operação com menos de 2 elementos na lista.")
-        # Caso que há mais de dois elementos na lista:
-        else:
-            # Percorrendo a lista:
-            aux = self.prim
+        aux = self.prim
+        if self.quant != 0 and self.quant != 1:
             while aux != None and aux.info != valor:
-                # Fazendo o aux caminhar pra frente enquanto não achar o valor.
                 aux = aux.prox
             
-            # Se achar o valor:
-            if aux.info == valor:
+            if aux != None:
                 antes = aux.ant
                 depois = aux.prox
+            
+                # se o antes existir
+                if aux != self.prim:
+                    if antes == self.prim:
+                        self.prim = aux
+                        aux.ant = None
+                    else:
+                        aux.ant = antes.ant
+                        antes.ant.prox = aux
+                    self.quant -= 1
+                
+                if aux != self.ult:
+                    if depois == self.ult:
+                        self.ult = aux
+                        aux.prox = None
+                    else:
+                        aux.prox = depois.prox
+                        depois.prox.ant = aux
+                    self.quant -= 1
 
-                # Verificando os casos especiais:
-                if antes == None:
-                    aux.prox = depois.prox
-                    depois.prox = aux                    
+                                                
 
 
 
@@ -77,6 +84,9 @@ class Ldde:
             print(aux.info, end='')
             aux = aux.prox
         print()
+        
+
+
     def show_reverso(self):
         aux = self.ult
         while aux:
