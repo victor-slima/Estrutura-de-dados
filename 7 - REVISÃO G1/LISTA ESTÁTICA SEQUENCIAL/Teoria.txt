@@ -1,0 +1,30 @@
+LISTAS:
+    
+    Uma lista é um tipo abstrato de dado que representa uma coeção de elementos, onde cada elemento tem uma
+    posição única e conhecida, com isso podemos:
+
+    - ADICIONAR ELEMENTOS EM UMA DETERMINADA POSIÇÃO;
+    - REMOVER ELEMENTOS EM UMA DETERMINADA POSIÇÃO;
+    - ACESSAR ELEMENTOS EM UMA DETERMINADA POSIÇÃO;
+    - VERIFICAR O TAMANHO DA LISTA;
+    - VERIFICAR SE A LISTA ESTÁ VAZIA;
+
+    Há alguns tipos de listas, entre elas: Lista estática, lista dinâmica, lista circular.
+
+Lista estática:
+    
+    - Possui tamanho fixo determinado na sua criação, e não pode ser alterado;
+    - Fácil de implementar e usa pouca memória;
+    - Não é flexível devido ao seu tamanho fixo;
+    - Pode ser sequencial ou encadeada (elementos apontam para o outro);
+    - Possui acesso indexado, coisa que as listas dinâmicas não tem;
+
+Lista Estática Sequencial:
+    - Permite acesso rápido aos elementos, pois tem acesso indexado;
+    - Porém, gofora o fato de ser estática, operações de inserção e e remoção são trabalhosos visto que os
+    elementos devem ser remanejados para alocar ou liberar espaço.
+
+    Interessante:
+        - Ao invés de imprimir mensagens de erro diretamente no console, é mais apropriado lançar exceções em caso
+        de erro, perimitindo que a aplicação capture essas exceções e realize um tratamento mais adequado.
+        - Sugestão, ListaCheiaException ou LixtaVaziaException;
