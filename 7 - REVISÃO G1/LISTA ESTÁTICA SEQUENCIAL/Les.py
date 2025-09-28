@@ -1,3 +1,12 @@
+# Tratamento de exceções:
+class ListaCheiaException(Exception):
+    pass
+
+class LixtaVaziaException(Exception):
+    pass
+
+# Isso torna o código seguro e fácil de ser utillizado
+
 # Dando início à implementação:
 
 class Les:
@@ -7,8 +16,11 @@ class Les:
         self.quant = 0
     
     def inserir_fim(self, valor):
-        self.vetor[self.quant] = valor # o vetor receberá o valor no índice, que é self.quant.
-        self.quant += 1 # quant vai receber +1, assim, a próxima posição (se existir), estará livre.
+        if self.quant != self.tam_maximo:
+            self.vetor[self.quant] = valor
+            self.quant += 1
+            return True
+        return False
 
     def show(self):
         for i in range(self.quant): # enquanto o i for menor que o tamanho da lista.
@@ -19,4 +31,12 @@ class Les:
         print(self.quant)
 
     def remover_fim(self):
-        self.quant -= 1
+        if self.quant != 0:
+            self.quant -= 1
+            return True
+        return False
+    
+    def inserir_inicio(self, valor):
+        for i in range(self.quant - 1):
+            self.vetor[i] = valor
+            self.quant += 1
