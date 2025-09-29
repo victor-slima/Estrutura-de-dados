@@ -21,7 +21,7 @@ Lista estática:
 
 Lista Estática Sequencial:
     - Permite acesso rápido aos elementos, pois tem acesso indexado;
-    - Porém, gofora o fato de ser estática, operações de inserção e e remoção são trabalhosos visto que os
+    - Porém, fora o fato de ser estática, operações de inserção e e remoção são trabalhosos visto que os
     elementos devem ser remanejados para alocar ou liberar espaço.
 
     Interessante:

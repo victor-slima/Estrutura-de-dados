@@ -174,3 +174,46 @@ class Ldse:
             else:
                 ant = aux
                 aux = aux.prox
+    
+    def remover_irmaos(self, valor):
+        # Lista vazia ou com apenas 1 elemento -> nada a remover
+        if self.quant <= 1:
+            return False
+
+        aux = self.prim
+        ant = None
+        
+        # Buscar o nó com o valor
+        while aux is not None and aux.info != valor:
+            ant = aux
+            aux = aux.prox
+
+        if aux is None:  # valor não encontrado
+            return False
+
+        # =============================
+        # Remover o nó anterior (se existir)
+        # =============================
+        if ant is not None:  
+            # Se o anterior for o primeiro nó
+            if ant == self.prim:
+                self.prim = aux
+            else:
+                # precisamos encontrar o nó antes de 'ant'
+                ant_ant = self.prim
+                while ant_ant.prox != ant:
+                    ant_ant = ant_ant.prox
+                ant_ant.prox = aux
+            self.quant -= 1
+
+        # =============================
+        # Remover o nó seguinte (se existir)
+        # =============================
+        if aux.prox is not None:
+            prox = aux.prox
+            aux.prox = prox.prox
+            if prox == self.ult:  # se o seguinte era o último
+                self.ult = aux
+            self.quant -= 1
+
+        return True

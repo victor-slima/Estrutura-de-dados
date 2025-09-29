@@ -15,7 +15,7 @@ l.inserir_fim('J')
 l.inserir_fim('K')
 l.inserir_fim('L')
 l.show() # ABCDEFGHIJKL
-# l.show_reverso() # LKJIHGFEDCBA
+l.show_reverso() # LKJIHGFEDCBA
 print("")
 
 
