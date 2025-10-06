@@ -229,7 +229,7 @@ class Ldde:
             print("Não há valores à remover.")
         else:
             aux = self.prim
-            i = 0
+            i = 1
             while aux != None and aux.info != valor:
                 aux = aux.prox
                 i += 1
@@ -240,5 +240,5 @@ class Ldde:
                 else:
                     self.ult = aux
                     aux.prox = None
-            self.quant = i + 1
+            self.quant = i
             
