@@ -76,35 +76,3 @@ class Lddec:
             elif aux == self.ult:
                 print("Nao ha valores apos o valor pois é o ultimo")
         self.quant = cont
-    
-    def remover_todos_antes(self, valor):
-        aux = self.prim
-        if self.quant == 1:
-            print("nao ha valores apos o valor selecionado.")
-        else:
-            cont = 1
-            while aux.info != valor:
-                aux = aux.prox
-                cont += 1
-            if aux.info == valor:
-                # O valor pode ser o ultimo:
-                if aux == self.ult:
-                    self.prim = aux
-                    self.prim.ant = self.ult.prox = aux
-                    self.quant = 1
-                    return
-                
-                # o valor pode ser o primeiro:
-                elif aux == self.prim:
-                    print("Nao ha nenhum valor a remover pois o valor selecionado e o primeiro.")
-                
-                # valor esta no meio:
-                else:
-                    self.prim = aux
-                    self.prim.ant = self.ult
-                    self.ult.prox = self.prim
-            self.quant -= cont
-
-    def remover_irmaos(self, valor):
-        if self.quant == 1:
-            print("Não")
