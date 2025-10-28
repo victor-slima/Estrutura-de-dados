@@ -1,0 +1,32 @@
+LiFo
+ultimo a entrar, primeiro a sair
+
+pilha:
+__init__
+push(valor)
+pop
+ver_topo
+------------
+esta_vazia()
+esta_cheia()
+show()
+
+pilha estatica:
+__init__
+inserir_fim
+remover_fim
+ver_ultimo
+------------
+esta_vazia()
+esta_cheia()
+show()
+
+pilha dinamica (ldse):
+
+inserir_inicio
+remover_inicio
+ver_primeiro
+------------
+esta_vazia
+
+show()
