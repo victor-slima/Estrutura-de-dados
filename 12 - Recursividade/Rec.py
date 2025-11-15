@@ -15,3 +15,13 @@ def fib(n):
         return fib(n-1) + fib(n-2)
 
 print(fib(5))
+
+def mult(x, y):
+    if x == 1:
+        return y
+    elif x == 0:
+        return 0
+    else:
+        return x + mult(x,y)
+    
+print(mult(5,4))
