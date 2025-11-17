@@ -1,17 +1,38 @@
 import pilhaD
 
-def ver_palindromo(palavra):
-    palavra = "".join(palavra.split())
+def inverter_palavra(palavra):
     pilha = pilhaD.PilhaD()
 
-    for char in palavra:
-        pilha.push(char)
+    # empilha letra por letra
+    for letra in palavra:
+        pilha.push(letra)
 
-    for char in palavra:
-        if pilha.verTopo() != char:
-            return False
-        pilha.pop()
+    invertida = ""
 
-    return True
+    # desempilha reconstruindo
+    while not pilha.vazia():
+        invertida += pilha.pop()
 
-print(ver_palindromo("socorram me subi no onibus em marrocos"))
+    return invertida
+
+
+def main():
+    frase = input("Digite uma frase: ")
+
+    palavras = frase.split()  # permitido
+
+    resultado = ""  # frase final
+
+    for i in range(len(palavras)):
+        palavra_invertida = inverter_palavra(palavras[i])
+
+        # adiciona um espaço **somente depois das palavras, menos a última**
+        if i == 0:
+            resultado += palavra_invertida
+        else:
+            resultado += " " + palavra_invertida
+
+    print("Saída:", resultado)
+
+
+main()

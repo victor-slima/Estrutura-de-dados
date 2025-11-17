@@ -14,11 +14,13 @@ class PilhaD:
     
     # o pop é o remover inicio
     def pop(self):
-        if self.topo == None:
-            return "Não há valores na pilha"
-        else:
-            self.topo = self.topo.prox
-            self.quant -= 1
+        if self.topo is None:
+            return None
+        valor = self.topo.info
+        self.topo = self.topo.prox
+        self.quant -= 1
+        return valor
+
     
     # Ver topo é o ver ultimo:
     def verTopo(self):
