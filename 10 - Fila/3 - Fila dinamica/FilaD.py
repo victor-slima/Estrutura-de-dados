@@ -30,3 +30,12 @@ class Fila_dinamica:
     
     def ver_primeiro(self):
         return self.prim.info
+    
+    def show(self):
+        aux = self.prim
+        while aux.info != None:
+            print(aux.info, end=" ")
+            aux = aux.prox
+        print()
+    
+    
