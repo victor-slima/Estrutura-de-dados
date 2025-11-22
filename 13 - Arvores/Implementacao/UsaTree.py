@@ -1,0 +1,11 @@
+import Tree
+
+t1 = Tree.Tree()
+
+t1.inserir(4)
+t1.inserir(2)
+t1.inserir(6)
+t1.inserir(7)
+t1.inserir(1)
+t1.inserir(5)
+t1.inserir(3)
