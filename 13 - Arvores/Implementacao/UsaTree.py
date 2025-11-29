@@ -12,4 +12,7 @@ t1.inserir(3)
 
 print("Buscando um valor na árvore.")
 
-t1.busca(1)
+t1.busca(7)
+
+print("In ordem:")
+print(t1.inOrdem())

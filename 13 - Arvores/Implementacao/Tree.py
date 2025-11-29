@@ -42,6 +42,14 @@ class No:
             else:
                 print(self.info)
                 return self.dir.busca(valor)
+    
+    # IN ORDEM
+    def inOrdem(self):
+        if self.esq != None:
+            self.esq.inOrdem()
+        print(self.info, end="")
+        if self.dir != None:
+            self.dir.inOrdem()
 
 class Tree:
     def __init__(self):
@@ -60,3 +68,9 @@ class Tree:
             return False
         else:
             return self.raiz.busca(valor)
+    
+    # IN ORDEM
+
+    def inOrdem(self):
+        if self.raiz != None:
+            self.raiz.inOrdem()   
