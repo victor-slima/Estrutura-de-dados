@@ -23,6 +23,25 @@ class No:
                 print(self.info)
                 self.dir.inserir(valor)
                 #print("#")
+    
+    # BUSCA
+
+    def busca(self, valor):
+        if valor == self.info:
+            print(self.info)
+            return True
+        elif valor < self.info:
+            if self.esq == None:
+                return False
+            else:
+                print(self.info)
+                return self.esq.busca(valor)
+        else:
+            if self.dir == None:
+                return False
+            else:
+                print(self.info)
+                return self.dir.busca(valor)
 
 class Tree:
     def __init__(self):
@@ -33,3 +52,11 @@ class Tree:
             self.raiz = No(valor)
         else:
             self.raiz.inserir(valor)
+    
+    # BUSCA
+
+    def busca(self, valor):
+        if self.raiz == None:
+            return False
+        else:
+            return self.raiz.busca(valor)
