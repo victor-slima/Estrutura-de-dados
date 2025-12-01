@@ -242,5 +242,22 @@ def maisdir(self):
     if self.dir != None:
         return self.dir.maisdir() + 1
     else:
+        return 
+
+# quantidade de ancestrais agora:
+def maisdir(self):
+    if self.dir != None:
+        return self.dir.maisdir() + self.info
+    else:
         return self.info
+
+# mostrar todos
+def maisdir(self):
+    if self.dir != None:
+        print(self.dir.maisdir())
+    else:
+        print(self.info)
+
+# mostrar somente os ancestrais
+
 """
