@@ -68,7 +68,7 @@ class No:
         print(self.info,end=" ")
     
     # qual ordem
-    def qualOrdem(self):
+    def ordemDecrescente(self):
         if self.dir != None:
             self.dir.qualOrdem()
         print(self.info,end=" ")
@@ -104,6 +104,45 @@ class No:
         if self.dir != None:
             total += self.dir.somaFolhas()
         return total
+    
+    # altura
+    def altura(self):
+        hesq = hdir = -1
+        if self.esq != None:
+            hesq = self.esq.altura()
+        if slef.dir != None:
+            hdir = self.dir.altura()
+        return 1 + max(hesq, hdir)
+
+    def busca(self, valor):
+        if valor == self.info:
+            return self.info
+        elif valor < self.info:
+            return self.esq.busca()
+        else:
+            return self.dir.busca()
+    
+    # altura do nó
+    def h(self, valor):
+        if valor == self.info:
+            return self.altura()
+        elif valor < self.info:
+            if self.esq == None:
+                return False
+            else:
+                return self.esq.h(valor)
+        else:
+            if self.dir == None:
+                return False
+            else:
+                return self.dir.h(valor)
+    
+    # descendente mais a direita
+    def maisdir(self):
+        if self.dir != None:
+            return self.dir.maisdir()
+        else:
+            return self.info
 
 
 class Tree:
@@ -155,3 +194,53 @@ class Tree:
     def somaFolhas(self):
         if self.raiz != None:
             return self.raiz.somaFolhas()
+
+    # altura da arvore
+    def altura(self):
+        if self.raiz != None:
+            return self.raiz.altura()
+    
+    # altura a partir de um no
+    def h(self, valor):
+        if self.raiz != None:
+            return self.raiz.h(valor)
+    
+    # descendente mais a direita
+    def maisdir(self):
+        if self.raiz != None:
+            return self.raiz.maisdir()
+
+
+# soma dos pares
+# soma dos internos (fora as folhas)
+# imprimir os descendendes do no escolhido
+"""
+dentro de busca:
+if self.esq != None:
+    self.esq.inOrdem()
+if self.dir != None:
+    self.dir.inOrdem()
+
+achar o 
+
+imprimir o maior filho do no escolhido
+
+ver se o no existe, e ver se o no tem filho, se nao tiver o direito (que é o naturalmente, o maior será o esquerdo, se houver)
+e se nao tiver, nao tem filhos, ou verifica logo se o no é folha, se for folha, retorna que o nó é folha.
+
+imprimir todos os descendentes pares de um determinado valor.
+
+#descendente mais a direita:
+dentro do primeiro if de busca(self, valor):
+    if self.dir != None:
+        return self.dir.info
+    elif self.esq != None:
+        return self.esq.info
+
+# Quantidade de nos até o no mais a direita
+def maisdir(self):
+    if self.dir != None:
+        return self.dir.maisdir() + 1
+    else:
+        return self.info
+"""
