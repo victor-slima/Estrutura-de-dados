@@ -258,6 +258,8 @@ def maisdir(self):
     else:
         print(self.info)
 
-# mostrar somente os ancestrais
+# mostrar somente os ancestrais;
+
+
 
 """
