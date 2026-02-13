@@ -8,7 +8,7 @@ class Les:
         self.quant = 0                    # quantidade de elementos atualmente  
         
 
-    # Criando uma funcao que ficará responsável pela visualização dos valores.
+    # Criando um metodo que ficará responsável pela visualização dos valores.
     def show(self):
         for i in range(self.quant):
             print(self.vetor[i], end="")

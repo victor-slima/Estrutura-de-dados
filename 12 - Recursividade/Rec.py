@@ -1,3 +1,5 @@
+# Aqui foi uma demonstracao de um metodo recursivo, um metodo que chama a si mesmo dentro de sua execucao.
+# se nao entendeu isso daqui, se fudeu filho.
 def fat(n):
     if n == 1:
         return 1
