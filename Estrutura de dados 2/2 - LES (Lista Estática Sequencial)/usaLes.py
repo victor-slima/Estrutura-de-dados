@@ -86,4 +86,10 @@ print(lista.get_index("A"))"""
 #===================================================================#
 
 print(lista.get_valor(2))
+print()
 lista.show_reverso()
+print()
+print(lista.existe("A"))
+print(lista.existe("C"))
+print(lista.existe("B"))
+print(lista.existe("E"))

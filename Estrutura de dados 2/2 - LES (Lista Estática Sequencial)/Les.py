@@ -14,6 +14,12 @@ class Les:
         for i in range(self.quant - 1, 0 - 1, -1):
             print(self.vetor[i], end=" - ")
         print()
+    
+    def existe(self, valor):
+        for i in range(self.quant):
+            if self.vetor[i] == valor:
+                return True
+        return False
 
     def get_prim(self):
         return self.vetor[0]
