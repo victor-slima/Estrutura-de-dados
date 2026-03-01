@@ -1,0 +1,17 @@
+inserir_inicio: insere um novo nó no início da lista. => feito
+
+remover_inicio: remove o primeiro nó da lista. => feito
+
+remover_fim: remove o último nó da lista. => feito
+
+inserir_fim: insere um novo nó no final da lista. => feito
+
+estaVazia: verifica se a lista está vazia. => feito
+
+tamanho_atual: retorna a quantidade atual de nós na lista. => fazendo
+
+ver_primeiro: retorna o valor do primeiro nó da lista. => feito
+
+ver_ultimo: retorna o valor do último nó da lista. => feito
+
+show: percorre todos os elementos da lista, imprimindo seus valores. => feito
